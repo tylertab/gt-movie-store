@@ -9,12 +9,12 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-import os
-from pathlib import Path
+
+import pathlib
 import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = pathlib.Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env()
 environ.Env.read_env()
 
-SECRET_KEY = env("DJANGO_SECRET_KEY")
+SECRET_KEY = "5v@cu7a5%#j(t2q=uxv@k$v%rjl32y%3%1gsyhox0ab24fn+"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'users',
     'reviews',
     'cart',
-    'home'
 ]
 
 MIDDLEWARE = [
@@ -63,7 +62,7 @@ ROOT_URLCONF = 'gtmoviestore.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'gtmoviestore/templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,10 +129,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-STATICFILES_DIRS = [
-    BASE_DIR / 'gtmoviestore/static/',
-]
-
-
