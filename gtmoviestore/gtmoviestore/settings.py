@@ -27,7 +27,6 @@ env = environ.Env()
 environ.Env.read_env()
 
 SECRET_KEY = "5v@cu7a5%#j(t2q=uxv@k$v%rjl32y%3%1gsyhox0ab24fn+"
-SECRET_KEY = "5v@cu7a5%#j(t2q=uxv@k$v%rjl32y%3%1gsyhox0ab24fn+"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
