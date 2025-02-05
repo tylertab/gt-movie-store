@@ -1,15 +1,55 @@
 {% extends 'base.html' %} {% block content %}
-<header class="masthead bg-index text-white text-center py-4">
-  <div class="container d-flex align-items-center flex-column pt-2">
-    <h2>Movies Store</h2>
+  <div class="hero-image">
+    <h2>GT Movie Store</h2>
     <p>Your Ticket to Unlimited Entertainment!</p>
   </div>
 </header>
+<div
+  style="
+    background-color: #b3a368;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  "
+>
+  <div
+    style="
+      height: 100%;
+      width: 800px;
+      background-color: #7e713d;
+      transform: skew(-45deg);
+      position: absolute;
+      top: 0;
+    "
+  ></div>
+  <a href="/movies" style="z-index: 5; color: white; font-size: 20px;">Take a look at our movies</a>
+</div>
 <div class="p-3">
   <div class="container">
     <div class="row mt-3">
-      <div class="col mx-auto text-center mb-3">
-        <h4>Welcome to the best movie store!!</h4>
+      <div
+        class="col mx-auto text-center mb-3"
+        style="display: flex; justify-content: center"
+      >
+        <div class="home-container">
+          <div class="boxes">
+            <div>
+              <h1>1,000+ Movies</h1>
+              <h2>you've never seen.</h2>
+            </div>
+            <div>
+              <h1>100+ Genres</h1>
+              <h2>for every mood.</h2>
+            </div>
+            <div>
+              <h1>1,000+ Hours</h1>
+              <h2>of content to choose from.</h2>
+            </div>
+          </div>
+          <!-- <h4>GT Movie Store</h4> -->
+        </div>
       </div>
     </div>
   </div>
