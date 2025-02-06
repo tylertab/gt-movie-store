@@ -62,3 +62,10 @@ def reset_password(request):
         
 def reset_password_done(request):
     return render(request, 'users/reset_password_done.html')
+
+@login_required
+def orders(request):
+    template_data={}
+    template_data['title']= 'Orders'
+    template_data['orders'] = request.user.order_set.all()
+    return render(request, 'users/orders.html', {'template_data':template_data})
