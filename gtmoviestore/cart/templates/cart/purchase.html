@@ -7,8 +7,41 @@
             <h2>Purchase Completed</h2>
             <hr />
             <p>Congratulations, purchase completed. Order
-              number is: <b>#{{ template_data.order_id }}</b>
+              number is: <b>#{{ template_data.order.id }}</b>
             </p>
+            <div class="card mb-4">
+            <div class="card-body">
+              <b>Date:</b> {{ template_data.order.date }}<br />
+              <b>Total:</b> ${{ template_data.order.total }}<br />
+              <table class="table table-bordered
+                  table-striped text-center mt-3">
+                  <thead>
+                    <tr>
+                        <th scope="col">Item ID</th>
+                        <th scope="col">Movie</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for item in template_data.order.item_set.all %}
+                    <tr>
+                        <td>{{ item.movie.id }}</td>
+                        <td>
+                          <a class="link-dark"
+                              href="{% url 'movies.show'
+                              id=item.movie.id %}">
+                              {{ item.movie.name }}
+                          </a>
+                        </td>
+                        <td>${{ item.movie.price }}</td>
+                        <td>{{ item.quantity }}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+              </table>
+            </div>
+            </div>
           </div>
       </div>
     </div>
