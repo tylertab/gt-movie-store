@@ -5,25 +5,23 @@
   <div class="container">
     <div class="row mt-3">
       <div class="col-md-6 mx-auto mb-3">
-        <h2>{{ template_data.movie.name }}</h2>
-        <hr />
-        <p><b>Description:</b> {{template_data.movie.description }}</p>
-        <p><b>Price:</b> ${{template_data.movie.price }}</p>
+        <a href="/movies" style="margin-bottom: 20px; display: block;">&#x25c0 Go back</a>
+        <h2 style="color: #003056; border-bottom: 8px solid #B3A368; display: inline-block; margin-bottom: 24px; padding-bottom: 4px;">{{ template_data.movie.name }}</h2>
+        <p><b style="color:#003056;">Description:</b> {{template_data.movie.description }}</p>
+        <p><b style="color: #003056">Price:</b> ${{template_data.movie.price }}</p>
         <p class="card-text">
           <form method="POST" action="{% url 'cart.add' id=template_data.movie.id %}">
-            <div class="row">
+            <div class="row" style="display: flex; justify-content: space-between; align-items: center;">
               {% csrf_token %}
               <div class="col-auto">
-                  <div class="input-group col-auto">
-                      <div class="input-group-text">Quantity
-                        </div>
+                  <div class="input-group col-auto" style="border: 1px solid #003056; border-radius: 8px; overflow: hidden; box-sizing: border-box;">
+                      <div style="background-color: #003056; color: white; padding-inline: 10px; padding-block: 8px;">Quantity</div>
                       <input type="number" min="1" max="10"
-                       class="form-control quantity-input"
-                       name="quantity" value ="1">
+                       name="quantity" value ="1" style="background-color: white; padding-inline: 10px; padding-block: 8px; border: none">
                     </div>
                   </div>
                 <div class="col-auto">
-                <button class="btn bg-dark text-white" type="submit">Add to cart</button>
+                <button type="submit" style="border: none; background-color: #B3A368; color: white; padding-inline: 10px; padding-block: 8px;">Add to cart</button>
               </div>
             </div>
           </form>

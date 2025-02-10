@@ -47,11 +47,13 @@
             </div>
       </a>
       {% endfor %}
-      {% if not template_data.movies %}
+    </div>
+    {% if not template_data.movies %}
+    <div>
       <h4>Sorry!</h4>
       <p>We found no movies matching your search.</p>
-      {% endif %}
     </div>
+    {% endif %}
   </div>
 </div>
 <style>
