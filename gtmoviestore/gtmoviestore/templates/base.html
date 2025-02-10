@@ -52,7 +52,8 @@
               <a class="nav-link" href="{% url 'home.about' %}">About</a>
               <a class="nav-link" href="{% url 'movies.index' %}">Movies</a>
               <a class="nav-link cart-parent" href="{% url 'cart.index' %}">
-                <img class="cart-icon" src="/static/img/cart.png" height="20px" width="20px">
+                Cart 
+                <!-- <img class="cart-icon" src="/static/img/cart.png" height="20px" width="20px"> -->
               </a>
             <div class="vr bg-white mx-2 d-none d-lg-block"></div>
               {% if user.is_authenticated %}

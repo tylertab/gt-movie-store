@@ -152,9 +152,9 @@
   margin-inline: 10px;
 }
 
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
   .cart-parent {
     background-color: red;
     content: "Cart";
   }
-}
+} */
