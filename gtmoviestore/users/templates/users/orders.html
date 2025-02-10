@@ -45,6 +45,9 @@
             </div>
             {% endfor %}
           </div>
+          {% if not template_data.orders %}
+          <h4>Your haven't made any orders yet.</h4>
+          {% endif %}
       </div>
     </div>
 </div>
