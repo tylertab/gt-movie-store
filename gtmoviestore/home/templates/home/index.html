@@ -1,7 +1,14 @@
 {% extends 'base.html' %} {% block content %}
   <div class="hero-image">
-    <h2>GT Movie Store</h2>
-    <p>Your Ticket to Unlimited Entertainment!</p>
+    <div class="hero-text">
+      <!-- <h2>GT Movie Store</h2> -->
+       <img src="/static/img/logo.png" height="50px">
+      <p>Let's see if we have your favorites.</p>
+      <form method="GET" action="/movies" style="min-width: 400px; display: flex; gap: 8px;">
+        <input type="text" name="search" placeholder="Search for.." style="border: none; padding: 10px; flex: 1;">
+        <button type="submit" style="color: white; background-color: #B3A368; border: none; padding-block: 10px; padding-inline: 16px;">Search</button>
+      </form>
+    </div>
   </div>
 </header>
 <div
@@ -24,7 +31,7 @@
       top: 0;
     "
   ></div>
-  <a href="/movies" style="z-index: 5; color: white; font-size: 20px;">Take a look at our movies</a>
+  <a href="/about" style="z-index: 5; color: white; font-size: 20px;">Learn More About Us ></a>
 </div>
 <div class="p-3">
   <div class="container">
@@ -48,6 +55,7 @@
               <h2>of content to choose from.</h2>
             </div>
           </div>
+          <h1 style="font-size: 1em; width: 100%; color: #6D747D">GT Movie Store has all the entertainment you need.</h1>
           <!-- <h4>GT Movie Store</h4> -->
         </div>
       </div>

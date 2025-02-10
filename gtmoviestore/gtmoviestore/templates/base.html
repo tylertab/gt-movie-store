@@ -51,7 +51,9 @@
             <div class="navbar-nav ms-auto navbar-ml">
               <a class="nav-link" href="{% url 'home.about' %}">About</a>
               <a class="nav-link" href="{% url 'movies.index' %}">Movies</a>
-              <a class="nav-link" href="{% url 'cart.index' %}">Cart</a>
+              <a class="nav-link" href="{% url 'cart.index' %}">
+                <img class="cart-icon" src="/static/img/cart.png" height="20px" width="20px">
+              </a>
             <div class="vr bg-white mx-2 d-none d-lg-block"></div>
               {% if user.is_authenticated %}
               <a class="nav-link" href="{% url 'users.orders' %}">Orders</a>
@@ -66,15 +68,14 @@
       </nav>
       <!-- Header -->
 
-      <div style="flex: 1; overflow: hidden;">{% block content %} {% endblock content %}</div>
+      <div style="flex: 1; overflow: hidden; display: flex; align-items: stretch; flex-direction: column; gap: 0;">{% block content %} {% endblock content %}</div>
 
       <!-- Footer -->
       <section class="p-3 ms-footer d-none d-md-block">
         <div class="container">
-          <div class="row mt-3 text-white">
-            <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-4">
-              <b>GT MOVIE STORE</b>
-              <hr />
+          <div class="row mt-3 text-white" style="display: flex; gap:20px">
+            <div class="" style="border-left: 1px solid white; color: black; flex: 2;">
+              <b style="display: inline-block; margin-bottom: 12px;">GT Movie Store</b>
               <p>
                 Welcome to GT Movie Store, your premier online destination for a
                 cinematic adventure like no other! Dive into the world of movies
@@ -82,19 +83,20 @@
                 immersive online movie store.
               </p>
             </div>
-            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-              <b>LINKS</b>
-              <hr />
-              <p><a href="{% url 'home.about' %}">About</a></p>
-              <p><a href="{% url 'movies.index' %}">Movies</a></p>
-              <p><a href="{% url 'users.reset_password' %}">Reset Password</a></p>
+            <div class="" style="border-left: 1px solid white; color: black; flex:1;">
+              <b style="display: inline-block; margin-bottom: 12px;">Links</b>
+              <p><a href="{% url 'home.about' %}" class="footer-link">About</a></p>
+              <p><a href="{% url 'movies.index' %}" class="footer-link">Movies</a></p>
+              <p><a href="{% url 'cart.index' %}" class="footer-link">Cart</a></p>
             </div>
-            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-              <b>CONTACT</b>
-              <hr />
+            <div class="" style="border-left: 1px solid white; color: black; flex:1;">
+              <b style="display: inline-block; margin-bottom: 12px;">Contact</b>
               <p><i class="fas fa-home me-2"></i> 150-2345 Tokyo-to, Japan</p>
               <p><i class="fas fa-envelope me-2"></i> info@moviesstore.com</p>
               <p><i class="fas fa-phone me-2"></i> +81 03-3333-3333</p>
+            </div>
+            <div style="flex:1;">
+              <img src="{% static 'img/logo.png' %}" height="40px" width="auto">
             </div>
           </div>
         </div>

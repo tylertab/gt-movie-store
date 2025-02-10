@@ -1,13 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-<div class="p-3">
-  <div class="container">
-    <div class="row mt-3">
-      <div class="col-md-6 mx-auto mb-3">
-        <h2>About</h2>
-        <hr />
-        <p>
+<div style="flex: 1; display: flex; flex-direction: column;">
+  <div style="color:white; background-color: #152639; padding: 50px;">
+    <div class="container">
+      <h2 style="border-bottom: 8px solid #B3A368; display: inline-block; padding-bottom: 8px;">About GT Movie Store</h2>
+      <p style="font-weight: 200;">The GT Movie Store is committed to providing the best entertainment for you.</p>
+    </div>
+  </div>
+  <div class="container" style="flex: 1; display: flex; margin-block: 30px;">
+    <div style="display: flex; gap: 20px; justify-content: space-between;">
+      <div class="col-md-6 mx-auto" style="padding-inline: 20px; box-sizing: border-box;">
+        <!-- <hr /> -->
+        <p style="font-size: 1.2em; font-weight: 200;">
            At Movies Store, we offer a vast digital library
            that spans across genres, ensuring there's
            something for every movie lover. Browse our
@@ -17,7 +22,8 @@
            purchase your favorite titles and instantly
            stream them in high-definition quality.
         </p>
-        <p>
+        <b style="margin-block: 20px; display: inline-block;">GT Movie Store has it all.</b>
+        <p style="font-size: 1.1em;">
           Discover the convenience of our digital platform,
           where you have the flexibility to watch movies
           on your preferred device, whether it's a smart
@@ -26,10 +32,7 @@
           next movie night pick has never been easier.
         </p>
       </div>
-      <div class="col-md-6 mx-auto mb-3 text-center">
-        <img src="{% static 'img/about.jpg' %}"
-             class="max-width-100"
-             alt="about" />
+      <div class=" mx-auto text-center" style="flex: 1; background-image: url('static/img/about-background.jpeg'); background-size: cover; background-position: center;">
       </div>
     </div>
   </div>

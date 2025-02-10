@@ -14,7 +14,7 @@ def index(request):
     template_data['movies'] = movies
     print(movies)
     return render(request, 'movies/index.html',
-                  {'template_data': template_data})
+                  {'template_data': template_data, 'search_term': search_term})
 
 def show(request, id):
     movie = Movie.objects.get(id=id)
