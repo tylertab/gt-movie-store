@@ -12,6 +12,7 @@ def index(request):
     template_data = {}
     template_data['title'] = 'Movies'
     template_data['movies'] = movies
+    print(movies)
     return render(request, 'movies/index.html',
                   {'template_data': template_data})
 

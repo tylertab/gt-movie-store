@@ -30,11 +30,11 @@
 
   <body>
     <!-- Header -->
-    <div style="display: flex; flex-direction: column; min-height: 100vh;">
-      <nav class="p-3 navbar navbar-expand-lg nav" style="position: sticky; top: 0; z-index: 100;">
-        <div class="container">
+    <div class="body-container" style="display: flex; flex-direction: column; min-height: 100vh;">
+      <nav class="p-3 navbar navbar-expand-lg nav">
+        <div class="container px-0">
           <a class="navbar-brand" href="{% url 'home.index' %}">
-            <img src="{% static 'img/logo.png' %}" alt="logo" height="60" style="box-sizing: border-box; padding: 0; margin-block: -10px;" />
+            <img src="{% static 'img/logo.png' %}" alt="logo" height="50" style="box-sizing: border-box; padding: 0; margin-block: -5px;" />
           </a>
           <button
             class="navbar-toggler"

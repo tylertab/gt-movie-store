@@ -60,6 +60,9 @@
   background-color: #a4925a;
   border-bottom: 8px solid #b9aa71;
   box-shadow: 0px 0px 10px -5px black;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .ms-footer {
@@ -114,7 +117,7 @@
   align-items: center;
   justify-content: center;
   max-width: 1000;
-  transition: box-shadow .1s ease;
+  transition: box-shadow 0.1s ease;
 }
 
 .boxes div h1 {
