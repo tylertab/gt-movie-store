@@ -21,7 +21,7 @@
       </div>
       <div style="position: absolute; bottom: -124px; width: 100%; height: 124px; background-color: #152639; z-index: -1; border-bottom: 8px solid #A5925A"></div>
     </div>
-    <div class="container" style="background-color: white; border-top-right-radius: 20px; border-top-left-radius: 20px; padding: 0; margin-top: 20px; box-shadow: 0px 0px 10px -5px black; padding: 20px; flex: 1;">
+    <div class="container" style="background-color: white; border-top-right-radius: 8px; border-top-left-radius: 8px; padding: 0; margin-top: 20px; box-shadow: 0px 0px 10px -8px black; padding: 40px; flex: 1;">
       <h1 style="color: #152639; border-bottom: 8px solid #A5925A; display: inline-block; font-size: 1.8em;">Available</h1>
       <p style="height: 30px; margin-top: 4px;">
         {% if search_term %}
@@ -30,29 +30,22 @@
         Showing all results
         {% endif %}
       </p>
-    <div class="row" style=" width: 100%;">
+    <div class="movie">
       {% for movie in template_data.movies %} 
       <!--Chat Gpt used to format image correctly-->
-      <div class="col-md-3 col-lg-3 mb-2">
-        <div class="align-items-center" style="width: 100%; max-width: 250px; border: 2px solid #D9D7D8; border-radius: 10px; box-sizing: border-box; overflow: hidden;">
-          <div style="background-color: red; position: relative; height: 250px;">
+      <a href="{% url 'movies.show' movie.id %}" style="display: flex; justify-content: center; flex-direction: column; align-items: stretch; border-radius: 4px; overflow: hidden; border: 1px solid #D8D8D8;">
+          <div style="position: relative; height: 300px;">
             <img src="{{ movie.image.url }}" 
                  class="movie-thumbnail"
                  style="object-fit: cover; object-position: top; height: 100%; width: 100%; position: relative;" />
-            <div style="position: absolute; top: 0; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(21,38,57,1) 0%, rgba(0,212,255,0) 48%);">Huh</div>
+            <div style="position: absolute; top: 0; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(21,38,57,1) 0%, rgba(0,212,255,0) 48%);"></div>
           </div>
-            <div class="card-body text-center" style="padding: 10px;">
-              <div style="text-align: left;">
-                <h1 style="font-size: 1.1em;">{{movie.name}}</h1>
-                <h2 style="font-size: .7em;">${{movie.price}}</h2>
-              </div>
-                <a href="{% url 'movies.show' movie.id %}" 
-                   class="btn bg-dark text-white">
-                   Check it out >
-                </a>
+            <div class="card-body text-center" style="display: flex; flex-direction: column; background-color: white;">
+                <h1 style="font-size: 1.3em; color: #152639; text-align: left; padding-inline: 10px; padding-top: 10px;">{{movie.name}}</h1>
+                <p style="font-size: .8em; text-align: left; padding-inline: 10px; color: #919191">{{movie.description|truncatechars:100}}</p>
+                <h2 style="font-size: .8em; font-weight: 500; color: #919191; padding-block: 8px; margin-bottom: 0; padding-right: 8px; text-align: right; margin-top: auto; border-top: 1px solid #D8D8D8;">Check it out ></h2>
             </div>
-        </div>
-      </div>
+      </a>
       {% endfor %}
       {% if not template_data.movies %}
       <h4>Sorry!</h4>
@@ -61,4 +54,36 @@
     </div>
   </div>
 </div>
+<style>
+  .movie {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .movie a {
+    color: black;
+    text-decoration: none !important;
+  }
+
+  @media (max-width: 992px) {
+    .movie {
+      grid-template-columns: repeat(3, 1fr); 
+    }
+  }
+
+  @media (max-width: 768px) {
+    .movie {
+      grid-template-columns: repeat(2, 1fr); 
+    }
+  }
+
+  /* @media (max-width: 576px) {
+    .movie {
+      grid-template-columns: repeat(1, 1fr); 
+    }
+  } */
+
+</style>
 {% endblock content %}
