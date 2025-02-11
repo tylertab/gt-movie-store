@@ -12,8 +12,7 @@
     </div>
     {% if template_data.movies_in_cart %}
     <div class="row m-1">
-      <table class="table table-bordered table-striped
-        text-center">
+      <table class="table table-bordered table-striped text-center">
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -36,17 +35,15 @@
     </div>
     <div class="row">
       <div class="text-end">
-        <a class="btn btn-outline-secondary mb-2"><b>Total
-          to pay:</b> ${{ template_data.cart_total }}</a>
-        {% if template_data.movies_in_cart|length > 0 %}
-        <a href= "{% url 'cart.purchase' %}"
-          class="btn bg-dark text-white mb-2">Purchase
-        </a>
-        <a href="{% url 'cart.clear' %}">
-          <button class="btn btn-danger mb-2">
-            Remove all movies from Cart</button>
-        </a>
+        <a class="btn btn-outline-secondary mb-2"><b>Total to pay:</b> ${{ template_data.cart_total }}</a>
+        {% if user.is_authenticated %}
+          <a href="{% url 'cart.purchase' %}" class="btn bg-dark text-white mb-2">Purchase</a>
+        {% else %}
+          <p class="text-danger mt-2"><b>Please <a href="{% url 'users.login' %}">log in</a> to purchase.</b></p>
         {% endif %}
+        <a href="{% url 'cart.clear' %}">
+          <button class="btn btn-danger mb-2">Remove all movies from Cart</button>
+        </a>
       </div>
     </div>
     {% else %}
