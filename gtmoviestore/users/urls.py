@@ -9,6 +9,7 @@ urlpatterns = [
     path('reset_password', views.reset_password, name='users.reset_password'),
     path('reset_password/done', views.reset_password_done, name ='users.reset_password_done'),
     path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),  # gpt generated
+    path('reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     path('orders/', views.orders, name='users.orders')
 
 ]
